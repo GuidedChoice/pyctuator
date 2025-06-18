@@ -32,7 +32,7 @@ class Pyctuator:
             app_name: str,
             app_url: str,
             pyctuator_endpoint_url: str,
-            registration_url: Optional[str],
+            registration_url: Optional[str] = None,
             registration_auth: Optional[Auth] = None,
             app_description: Optional[str] = None,
             registration_interval_sec: float = 10,
