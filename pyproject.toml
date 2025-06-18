@@ -1,21 +1,17 @@
 [tool.poetry]
-name = "pyctuator"
-version = "1.2.0"
-description = "A Python implementation of the Spring Actuator API for popular web frameworks"
+name = "guidedchoice-pyctuator"  # Changed package name for PyPI uniqueness
+version = "1.2.2" # Optional: indicate fork/version
+description = "A Python implementation of the Spring Actuator API for popular web frameworks (GuidedChoice fork)"
 authors = [
-    "Michael Yakobi <michael.yakobi@solaredge.com>",
-    "Inbal Levi <inbal.levi@solaredge.com>",
-    "Yanay Reingewertz <yanay.reingewertz@solaredge.com>",
-    "Matan Rubin <matan.rubin@solaredge.com>"
+    "Your Name <your.email@guidedchoice.com>"
 ]
 maintainers = [
-    "Matan Rubin <matan.rubin@solaredge.com>",
-    "Michael Yakobi <michael.yakobi@solaredge.com>"
+    "Your Name <your.email@guidedchoice.com>"
 ]
 readme = "README.md"
-homepage = "https://github.com/SolarEdgeTech/pyctuator"
-repository = "https://github.com/SolarEdgeTech/pyctuator"
-keywords = ["spring boot admin", "actuator", "pyctuator", "fastapi", "flask", "aiohttp", "tornado"]
+homepage = "https://github.com/guidedchoice/pyctuator"
+repository = "https://github.com/guidedchoice/pyctuator"
+keywords = ["spring boot admin", "actuator", "pyctuator", "fastapi", "flask", "aiohttp", "tornado", "guidedchoice"]
 
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -46,11 +42,11 @@ redis = {version = "^4.3.4", optional = true}
 aiohttp = {version = "^3.6.2", optional = true}
 tornado = {version = "^6.0.4", optional = true}
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 requests = "^2.22"
 pytest = "^7.1.3"
 mypy = "^1.0.1"
-pylint = "^2.15.0"   # v2.5 does not properly run on docker image...
+pylint = "^2.15.0"
 pytest-cov = "^4.0.0"
 autopep8 = "^2.0.0"
 
@@ -64,5 +60,8 @@ db = ["sqlalchemy", "PyMySQL", "cryptography"]
 redis = ["redis"]
 
 [build-system]
-requires = ["poetry>=1.1"]
-build-backend = "poetry.masonry.api"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+ 
+[[tool.poetry.packages]]
+include = "pyctuator"
